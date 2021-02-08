@@ -1,0 +1,29 @@
+This is a text file in which the various plans of this DebtSnowball project is highlighted.
+
+1) Create a database to enter for each debt:
+    1.1) the object that has occurred debt
+    1.2) the amount outstanding
+    1.3) the interest rate of the object, per the period stated
+    1.4) the amount of time left over to pay off the debt.
+    1.5) the amount of money is needed to stay current on each debt.
+
+2) Sort the debts from lowest debt left to highest, and show the amount outstanding for each debt.
+
+3) Each month, add amount of extra money to throw into your DebtSnowball
+
+4) Add the amount of the payable debt to each, to keep current with the debts.
+
+5) Add the remaining amount to the smallest debt payable.
+
+6) Recalculate:
+    6.1) The debt left over
+    6.2) The amount outstanding
+    6.3) The period left over to pay off debt
+
+7) Once the smallest debt is paid off, mark it as paid off, add this value to the next payable debt, and pay this off.
+
+8) New debt add this in the sorted list.
+
+9) Repeat 6 until all debts are complete.
+
+10) Congratulate the user on being debt free!!!
