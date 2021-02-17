@@ -7,45 +7,9 @@
             "interest_rate": 7.25
         },
         {
-            "name": "car",
-            "current": 3833.79,
-            "outstanding": 200000.0,
-            "interest_rate": 7.25
-        },
-        {
             "name": "credit card",
             "current": 0.0,
             "outstanding": 1000.0,
-            "interest_rate": 7.25
-        },
-        {
-            "name": "test",
-            "current": "1",
-            "outstanding": "2",
-            "interest_rate": 7.25
-        },
-        {
-            "name": "test 2",
-            "current": "2",
-            "outstanding": "4",
-            "interest_rate": 7.25
-        },
-        {
-            "name": "test 3",
-            "current": "500000",
-            "outstanding": "10000000000",
-            "interest_rate": 7.25
-        },
-        {
-            "name": "test 4",
-            "current": "1234",
-            "outstanding": "5678",
-            "interest_rate": 7.25
-        },
-        {
-            "name": "hello",
-            "current": "123",
-            "outstanding": "456",
             "interest_rate": 7.25
         },
         {
@@ -58,6 +22,36 @@
             "name": "house",
             "current": 8800.0,
             "outstanding": 1100000.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "Anna",
+            "current": 34.0,
+            "outstanding": 2.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "Simon",
+            "current": 223.0,
+            "outstanding": 229992.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "Books",
+            "current": 0.0,
+            "outstanding": 22.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "Laptop",
+            "current": 299.99,
+            "outstanding": 25000.99,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "Bicycle",
+            "current": 1789.0,
+            "outstanding": 65999.99,
             "interest_rate": 7.25
         }
     ]

@@ -40,12 +40,18 @@ class DebtSnowballUtils:
 
         return Debt(debt_name, debt_current, debt_outstanding)
 
+    @staticmethod
+    def sortDebtSnowball(debt_data_accounts):
+        """
+        This sorts the debt in terms of the debt.
+        Args:
+            debt_accounts(list):    This is a list of all debt accounts
+        Returns:
+            sorted_debts(list):     This is a sorted list of all debt accounts
+            :param debt_data_accounts:
+        """
 
-def debtDatabase(self):
-    """
-    This method creates a database containing various debts including information regarding their names,
-    current and outstanding amounts.
-
-    Args:
-
-    """
+        print(debt_data_accounts)
+        sortedlist = sorted(debt_data_accounts, key=lambda k: k['outstanding'])
+        print('Sorted List: ' + str(sortedlist))
+        return sortedlist
