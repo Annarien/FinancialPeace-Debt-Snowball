@@ -1,6 +1,8 @@
 """This is a utils python file, containing a class called DebtSnowballUtils in which various functions are created."""
 
 # imports
+from typing import List
+
 from Debt import Debt
 
 
@@ -41,7 +43,7 @@ class DebtSnowballUtils:
         return Debt(debt_name, debt_current, debt_outstanding)
 
     @staticmethod
-    def sortDebtSnowball(debt_data_accounts):
+    def sortDebtSnowball(debt_data_accounts: List[Debt]):
         """
         This sorts the debt in terms of the outstanding debt.
         Args:
@@ -50,16 +52,22 @@ class DebtSnowballUtils:
             sorted_ist(list):     This is a sorted list of all debt accounts
         """
 
-        print(debt_data_accounts)
-        sorted_list = sorted(debt_data_accounts, key=lambda k: k['outstanding'])
-        print('Sorted List: ' + str(sorted_list))
+        sorted_list = sorted(debt_data_accounts, key=lambda k: k.outstanding)
         return sorted_list
 
     @staticmethod
-    def moneyInsertionForCurrent(money):
+    def moneyInsertionForCurrent(money, sorted_list):
         """
         This inserts the extra money after paying all bills into the debts. This is adds the money to all debts the contain payments needed to keep current payments.
         Args:
-            money(float)
+            money(float):       This is the money to pay all current bills.
+            sorted_list(list):  This is the sorted list of all debts
         """
+
+        for i in sorted_list:
+            print(sorted_list[i])
+
+
+
+
 

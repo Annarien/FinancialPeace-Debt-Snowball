@@ -1,58 +1,76 @@
 {
-    "debt_accounts": [
+    "accounts": [
+        {
+            "name": "Anna",
+            "current": 0.34,
+            "outstanding": 2.0,
+            "interest_rate": 7.25,
+            "additional_payment": 1.0,
+            "total_monthly_payment": 1.34
+        },
+        {
+            "name": "Books",
+            "current": 5.0,
+            "outstanding": 22.0,
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 5.0
+        },
         {
             "name": "cellphone",
             "current": 299.0,
             "outstanding": 299.0,
-            "interest_rate": 7.25
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 299.0
         },
         {
             "name": "credit card",
             "current": 0.0,
             "outstanding": 1000.0,
-            "interest_rate": 7.25
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 0.0
         },
         {
             "name": "next test",
             "current": 123.0,
             "outstanding": 6789.0,
-            "interest_rate": 7.25
-        },
-        {
-            "name": "house",
-            "current": 8800.0,
-            "outstanding": 1100000.0,
-            "interest_rate": 7.25
-        },
-        {
-            "name": "Anna",
-            "current": 34.0,
-            "outstanding": 2.0,
-            "interest_rate": 7.25
-        },
-        {
-            "name": "Simon",
-            "current": 223.0,
-            "outstanding": 229992.0,
-            "interest_rate": 7.25
-        },
-        {
-            "name": "Books",
-            "current": 0.0,
-            "outstanding": 22.0,
-            "interest_rate": 7.25
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 123.0
         },
         {
             "name": "Laptop",
             "current": 299.99,
             "outstanding": 25000.99,
-            "interest_rate": 7.25
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 299.99
         },
         {
             "name": "Bicycle",
             "current": 1789.0,
             "outstanding": 65999.99,
-            "interest_rate": 7.25
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 1789.0
+        },
+        {
+            "name": "Simon",
+            "current": 223.0,
+            "outstanding": 229992.0,
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 223.0
+        },
+        {
+            "name": "house",
+            "current": 8800.0,
+            "outstanding": 1100000.0,
+            "interest_rate": 7.25,
+            "additional_payment": 0.0,
+            "total_monthly_payment": 8800.0
         }
     ]
 }
