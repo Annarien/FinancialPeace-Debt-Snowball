@@ -52,3 +52,7 @@ with open('Debts.json', 'w') as outfile:
 
 with open('SortedDebts.json', 'w') as sorted_file:
     json.dump(sorted_dict, sorted_file)
+
+# inserting money into debts that is needed into current payments necessary
+money = float(input('Enter the extra amount of money'))
+DebtSnowballUtils.moneyInsertionForCurrent(money)

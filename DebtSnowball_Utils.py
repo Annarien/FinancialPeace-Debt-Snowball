@@ -43,15 +43,23 @@ class DebtSnowballUtils:
     @staticmethod
     def sortDebtSnowball(debt_data_accounts):
         """
-        This sorts the debt in terms of the debt.
+        This sorts the debt in terms of the outstanding debt.
         Args:
-            debt_accounts(list):    This is a list of all debt accounts
+            debt_data_accounts(list):    This is a list of all debt accounts
         Returns:
-            sorted_debts(list):     This is a sorted list of all debt accounts
-            :param debt_data_accounts:
+            sorted_ist(list):     This is a sorted list of all debt accounts
         """
 
         print(debt_data_accounts)
-        sortedlist = sorted(debt_data_accounts, key=lambda k: k['outstanding'])
-        print('Sorted List: ' + str(sortedlist))
-        return sortedlist
+        sorted_list = sorted(debt_data_accounts, key=lambda k: k['outstanding'])
+        print('Sorted List: ' + str(sorted_list))
+        return sorted_list
+
+    @staticmethod
+    def moneyInsertionForCurrent(money):
+        """
+        This inserts the extra money after paying all bills into the debts. This is adds the money to all debts the contain payments needed to keep current payments.
+        Args:
+            money(float)
+        """
+
