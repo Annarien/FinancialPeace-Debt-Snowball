@@ -28,3 +28,6 @@ class Debt:
     def getMonthlyDebtPayment(self):
         self.total_monthly_payment = self.current + self.additional_payment
         return self.total_monthly_payment
+
+    def isPaidOff(self):
+        return self.outstanding <= 0.0

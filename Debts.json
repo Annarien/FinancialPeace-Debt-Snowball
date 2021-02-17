@@ -11,18 +11,18 @@
         {
             "name": "Books",
             "current": 5.0,
-            "outstanding": 22.0,
+            "outstanding": 7.0,
             "interest_rate": 7.25,
             "additional_payment": 0.0,
             "total_monthly_payment": 5.0
         },
         {
             "name": "cellphone",
-            "current": 299.0,
-            "outstanding": 299.0,
+            "current": 300.0,
+            "outstanding": 300.0,
             "interest_rate": 7.25,
             "additional_payment": 0.0,
-            "total_monthly_payment": 299.0
+            "total_monthly_payment": 300.0
         },
         {
             "name": "credit card",
@@ -35,7 +35,7 @@
         {
             "name": "next test",
             "current": 123.0,
-            "outstanding": 6789.0,
+            "outstanding": 6420.0,
             "interest_rate": 7.25,
             "additional_payment": 0.0,
             "total_monthly_payment": 123.0
@@ -43,7 +43,7 @@
         {
             "name": "Laptop",
             "current": 299.99,
-            "outstanding": 25000.99,
+            "outstanding": 24101.019999999997,
             "interest_rate": 7.25,
             "additional_payment": 0.0,
             "total_monthly_payment": 299.99
@@ -51,7 +51,7 @@
         {
             "name": "Bicycle",
             "current": 1789.0,
-            "outstanding": 65999.99,
+            "outstanding": 60632.990000000005,
             "interest_rate": 7.25,
             "additional_payment": 0.0,
             "total_monthly_payment": 1789.0
@@ -59,7 +59,7 @@
         {
             "name": "Simon",
             "current": 223.0,
-            "outstanding": 229992.0,
+            "outstanding": 229323.0,
             "interest_rate": 7.25,
             "additional_payment": 0.0,
             "total_monthly_payment": 223.0
@@ -67,7 +67,7 @@
         {
             "name": "house",
             "current": 8800.0,
-            "outstanding": 1100000.0,
+            "outstanding": 1073600.0,
             "interest_rate": 7.25,
             "additional_payment": 0.0,
             "total_monthly_payment": 8800.0
