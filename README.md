@@ -1,1 +1,1 @@
-# Financial Peace Debt Snowball
+# DebtSnowball

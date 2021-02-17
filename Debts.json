@@ -1,0 +1,64 @@
+{
+    "debt_accounts": [
+        {
+            "name": "cellphone",
+            "current": 299.0,
+            "outstanding": 299.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "car",
+            "current": 3833.79,
+            "outstanding": 200000.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "credit card",
+            "current": 0.0,
+            "outstanding": 1000.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "test",
+            "current": "1",
+            "outstanding": "2",
+            "interest_rate": 7.25
+        },
+        {
+            "name": "test 2",
+            "current": "2",
+            "outstanding": "4",
+            "interest_rate": 7.25
+        },
+        {
+            "name": "test 3",
+            "current": "500000",
+            "outstanding": "10000000000",
+            "interest_rate": 7.25
+        },
+        {
+            "name": "test 4",
+            "current": "1234",
+            "outstanding": "5678",
+            "interest_rate": 7.25
+        },
+        {
+            "name": "hello",
+            "current": "123",
+            "outstanding": "456",
+            "interest_rate": 7.25
+        },
+        {
+            "name": "next test",
+            "current": 123.0,
+            "outstanding": 6789.0,
+            "interest_rate": 7.25
+        },
+        {
+            "name": "house",
+            "current": 8800.0,
+            "outstanding": 1100000.0,
+            "interest_rate": 7.25
+        }
+    ]
+}
