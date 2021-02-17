@@ -78,9 +78,11 @@ while debts.getTotalAmountOutstanding() > 0:
             debts.accounts[1].additional_payment = debts.accounts[0].getMonthlyDebtPayment()
         if i == 2 and not debts.accounts[2].isPaidOff() and debts.accounts[1].isPaidOff():
             debts.accounts[2].additional_payment = debts.accounts[1].getMonthlyDebtPayment()
+        if i == 3 and not debts.accounts[3].isPaidOff() and debts.accounts[2].isPaidOff():
+            debts.accounts[3].additional_payment = debts.accounts[2].getMonthlyDebtPayment()
 
         if not debts.accounts[i].isPaidOff():
-            print("Subtracting")
+            print(f"Subtracting {debts.accounts[i].getMonthlyDebtPayment()} from {debts.accounts[i].outstanding}")
             debts.accounts[i].outstanding -= debts.accounts[i].getMonthlyDebtPayment()
 
 print(debts.toJSON())
