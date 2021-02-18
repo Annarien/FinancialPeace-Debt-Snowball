@@ -70,14 +70,11 @@ class DebtSnowballUtils:
             for i in range(0, len(debts.accounts)):
                 if i == 0 and not debts.accounts[0].isPaidOff():
                     debts.accounts[0].additional_payment = remaining_income
-                if i == 1 and not debts.accounts[1].isPaidOff() and debts.accounts[0].isPaidOff():
-                    debts.accounts[1].additional_payment = debts.accounts[0].getMonthlyDebtPayment()
-                if i == 2 and not debts.accounts[2].isPaidOff() and debts.accounts[1].isPaidOff():
-                    debts.accounts[2].additional_payment = debts.accounts[1].getMonthlyDebtPayment()
-                if i == 3 and not debts.accounts[3].isPaidOff() and debts.accounts[2].isPaidOff():
-                    debts.accounts[3].additional_payment = debts.accounts[2].getMonthlyDebtPayment()
+                if i > 0 and not debts.accounts[i].isPaidOff() and debts.accounts[i - 1].isPaidOff():
+                    debts.accounts[i].additional_payment = debts.accounts[i - 1].getMonthlyDebtPayment()
 
                 if not debts.accounts[i].isPaidOff():
                     print(
                         f"Subtracting {debts.accounts[i].getMonthlyDebtPayment()} from {debts.accounts[i].outstanding}")
                     debts.accounts[i].outstanding -= debts.accounts[i].getMonthlyDebtPayment()
+

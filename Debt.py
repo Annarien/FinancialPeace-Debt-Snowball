@@ -10,6 +10,7 @@ class Debt:
             name: str,
             current: float,
             outstanding: float,
+            amount_left_to_pay: float,
             interest_rate: float = 7.25,
             additional_payment: float = 0.0):
         self.name = name
@@ -18,6 +19,7 @@ class Debt:
         self.interest_rate = interest_rate
         self.additional_payment = additional_payment
         self.total_monthly_payment = self.current + self.additional_payment
+        self.amount_left_to_pay = self.outstanding - self.total_monthly_payment
 
     def toJSON(self):
         return json.dumps(self,
@@ -31,3 +33,7 @@ class Debt:
 
     def isPaidOff(self):
         return self.outstanding <= 0.0
+
+    def leftToPay(self):
+        self.amount_left_to_pay = self.outstanding - self.getMonthlyDebtPayment()
+        return self.amount_left_to_pay

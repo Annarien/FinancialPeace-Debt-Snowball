@@ -5,7 +5,7 @@
             "current": 0.34,
             "outstanding": 2.0,
             "interest_rate": 7.25,
-            "additional_payment": 1.0,
+            "additional_payment": 0.0,
             "total_monthly_payment": 1.34
         },
         {

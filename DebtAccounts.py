@@ -23,3 +23,5 @@ class DebtAccounts:
             total_outstanding += account.outstanding
 
         return total_outstanding
+
+
