@@ -4,6 +4,9 @@
 from typing import List
 
 from Debt import Debt
+from DebtAccounts import DebtAccounts
+
+debts = DebtAccounts()
 
 
 # creating a class called DebtSnowballClass
@@ -55,26 +58,48 @@ class DebtSnowballUtils:
         sorted_list = sorted(debt_data_accounts, key=lambda k: k.outstanding)
         return sorted_list
 
+    # @staticmethod def debtSnowball(debts): # inserting money into debts that is needed into current payments
+    # necessary print(f"Total amount owed: R{debts.getTotalAmountOutstanding()}") remaining_income = float(input(
+    # 'Enter how much extra money you have in your budget after staying current. \n'))
+    #
+    #     while debts.getTotalAmountOutstanding() > 0:
+    #         # simulate months.
+    #         # each iteration of this loop will represent one month.
+    #         # debts.accounts[0].outstanding -= debts.accounts[0].getMonthlyDebtPayment()
+    #         # eventually this will become <= 0, move to the next debt
+    #
+    #         for i in range(0, len(debts.accounts)):
+    #             if i == 0 and not debts.accounts[0].isPaidOff():
+    #                 debts.accounts[0].additional_payment = remaining_income
+    #             if i > 0 and not debts.accounts[i].isPaidOff() and debts.accounts[i - 1].isPaidOff():
+    #                 debts.accounts[i].additional_payment = debts.accounts[i - 1].getMonthlyDebtPayment()
+    #
+    # if not debts.accounts[i].isPaidOff(): print( f"Subtracting {debts.accounts[i].getMonthlyDebtPayment()} from {
+    # debts.accounts[i].outstanding}") debts.accounts[i].outstanding -= debts.accounts[i].getMonthlyDebtPayment()
+
     @staticmethod
     def debtSnowball(debts):
-        # inserting money into debts that is needed into current payments necessary
+
+        #     # inserting money into debts that is needed into current payments necessary
         print(f"Total amount owed: R{debts.getTotalAmountOutstanding()}")
         remaining_income = float(input('Enter how much extra money you have in your budget after staying current. \n'))
 
-        while debts.getTotalAmountOutstanding() > 0:
-            # simulate months.
-            # each iteration of this loop will represent one month.
-            # debts.accounts[0].outstanding -= debts.accounts[0].getMonthlyDebtPayment()
-            # eventually this will become <= 0, move to the next debt
+        # assuming months is the amount of debt, and increasing it if the debt has not been paid off.
+        months = len(debts.accounts)
 
-            for i in range(0, len(debts.accounts)):
-                if i == 0 and not debts.accounts[0].isPaidOff():
-                    debts.accounts[0].additional_payment = remaining_income
-                if i > 0 and not debts.accounts[i].isPaidOff() and debts.accounts[i - 1].isPaidOff():
-                    debts.accounts[i].additional_payment = debts.accounts[i - 1].getMonthlyDebtPayment()
+        for i in range(0, months):
+            while debts.accounts[i].outstanding > 0.0:
+                debts.accounts[i].additional_payment = debts.accounts[i].additional_payment + remaining_income
+                debts.accounts[i].total_monthly_payment = debts.accounts[i].current + \
+                                                          debts.accounts[i].additional_payment
+                debts.accounts[i].amount_left_to_pay = debts.accounts[i].outstanding - debts.accounts[
+                    i].total_monthly_payment
+                debts.accounts[i].outstanding = debts.accounts[i].amount_left_to_pay
 
-                if not debts.accounts[i].isPaidOff():
-                    print(
-                        f"Subtracting {debts.accounts[i].getMonthlyDebtPayment()} from {debts.accounts[i].outstanding}")
-                    debts.accounts[i].outstanding -= debts.accounts[i].getMonthlyDebtPayment()
-
+                if debts.accounts[i].amount_left_to_pay <= 0.0:
+                    debts.accounts[i + 1].additional_payment = (0 - debts.accounts[i].amount_left_to_pay) + \
+                                                               debts.accounts[i].total_monthly_payment
+                    print(f"Paid off {debts.accounts[i].name}")
+                elif debts.accounts[i].amount_left_to_pay > 0.0:
+                    debts.accounts[i].outstanding = debts.accounts[i].amount_left_to_pay
+                    months + 1
