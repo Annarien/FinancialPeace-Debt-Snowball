@@ -56,18 +56,28 @@ class DebtSnowballUtils:
         return sorted_list
 
     @staticmethod
-    def moneyInsertionForCurrent(money, sorted_list):
-        """
-        This inserts the extra money after paying all bills into the debts. This is adds the money to all debts the contain payments needed to keep current payments.
-        Args:
-            money(float):       This is the money to pay all current bills.
-            sorted_list(list):  This is the sorted list of all debts
-        """
+    def debtSnowball(debts):
+        # inserting money into debts that is needed into current payments necessary
+        print(f"Total amount owed: R{debts.getTotalAmountOutstanding()}")
+        remaining_income = float(input('Enter how much extra money you have in your budget after staying current. \n'))
 
-        for i in sorted_list:
-            print(sorted_list[i])
+        while debts.getTotalAmountOutstanding() > 0:
+            # simulate months.
+            # each iteration of this loop will represent one month.
+            # debts.accounts[0].outstanding -= debts.accounts[0].getMonthlyDebtPayment()
+            # eventually this will become <= 0, move to the next debt
 
+            for i in range(0, len(debts.accounts)):
+                if i == 0 and not debts.accounts[0].isPaidOff():
+                    debts.accounts[0].additional_payment = remaining_income
+                if i == 1 and not debts.accounts[1].isPaidOff() and debts.accounts[0].isPaidOff():
+                    debts.accounts[1].additional_payment = debts.accounts[0].getMonthlyDebtPayment()
+                if i == 2 and not debts.accounts[2].isPaidOff() and debts.accounts[1].isPaidOff():
+                    debts.accounts[2].additional_payment = debts.accounts[1].getMonthlyDebtPayment()
+                if i == 3 and not debts.accounts[3].isPaidOff() and debts.accounts[2].isPaidOff():
+                    debts.accounts[3].additional_payment = debts.accounts[2].getMonthlyDebtPayment()
 
-
-
-
+                if not debts.accounts[i].isPaidOff():
+                    print(
+                        f"Subtracting {debts.accounts[i].getMonthlyDebtPayment()} from {debts.accounts[i].outstanding}")
+                    debts.accounts[i].outstanding -= debts.accounts[i].getMonthlyDebtPayment()

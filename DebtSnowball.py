@@ -62,31 +62,13 @@ if add_or_remove == "yes":
 debts.accounts = DebtSnowballUtils.sortDebtSnowball(debts.accounts)
 # print(debts.toJSON())
 
-# inserting money into debts that is needed into current payments necessary
-print(f"Total amount owed: R{debts.getTotalAmountOutstanding()}")
-remaining_income = float(input('Enter how much extra money you have in your budget after staying current. \n'))
-while debts.getTotalAmountOutstanding() > 0:
-    # simulate months.
-    # each iteration of this loop will represent one month.
-    # debts.accounts[0].outstanding -= debts.accounts[0].getMonthlyDebtPayment()
-    # eventually this will become <= 0, move to the next debt
 
-    for i in range(0, len(debts.accounts)):
-        if i == 0 and not debts.accounts[0].isPaidOff():
-            debts.accounts[0].additional_payment = remaining_income
-        if i == 1 and not debts.accounts[1].isPaidOff() and debts.accounts[0].isPaidOff():
-            debts.accounts[1].additional_payment = debts.accounts[0].getMonthlyDebtPayment()
-        if i == 2 and not debts.accounts[2].isPaidOff() and debts.accounts[1].isPaidOff():
-            debts.accounts[2].additional_payment = debts.accounts[1].getMonthlyDebtPayment()
-        if i == 3 and not debts.accounts[3].isPaidOff() and debts.accounts[2].isPaidOff():
-            debts.accounts[3].additional_payment = debts.accounts[2].getMonthlyDebtPayment()
-
-        if not debts.accounts[i].isPaidOff():
-            print(f"Subtracting {debts.accounts[i].getMonthlyDebtPayment()} from {debts.accounts[i].outstanding}")
-            debts.accounts[i].outstanding -= debts.accounts[i].getMonthlyDebtPayment()
+DebtSnowballUtils.debtSnowball(debts)
 
 print(debts.toJSON())
 
+# DebtSnowballUtils.debtSnowball(debts)
+
 # write new debt to json file
 # with open('Debts.json', 'w') as outfile:
-    # json.dump(debts.__dict__, outfile, default=lambda o: o.__dict__, indent=4)
+# json.dump(debts.__dict__, outfile, default=lambda o: o.__dict__, indent=4)
