@@ -21,7 +21,7 @@ class DebtAccounts:
         total_outstanding = 0.0
         for account in self.accounts:
             total_outstanding += account.outstanding
-
         return total_outstanding
+
 
 
