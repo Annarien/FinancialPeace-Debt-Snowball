@@ -65,7 +65,7 @@ debts.accounts = DebtSnowballUtils.sortDebtSnowball(debts.accounts)
 
 DebtSnowballUtils.debtSnowball(debts)
 
-print(debts.toJSON())
+# print(debts.toJSON())
 
 # DebtSnowballUtils.debtSnowball(debts)
 

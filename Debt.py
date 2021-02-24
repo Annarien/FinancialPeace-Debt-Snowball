@@ -10,18 +10,18 @@ class Debt:
             name: str,
             current: float,
             outstanding: float,
-            amount_left_to_pay: float,
             interest_rate: float = 7.25,
             additional_payment: float = 0.0,
-            status: int = 0):
+            status: bool = False,
+            has_been_added_to_snowball: bool = False):
         self.name = name
         self.current = current
         self.outstanding = outstanding
         self.interest_rate = interest_rate
         self.additional_payment = additional_payment
         self.total_monthly_payment = self.current + self.additional_payment
-        self.amount_left_to_pay = amount_left_to_pay
         self.status = status
+        self.has_been_added_to_snowball = has_been_added_to_snowball
 
     def toJSON(self):
         return json.dumps(self,
@@ -33,10 +33,15 @@ class Debt:
         self.total_monthly_payment = self.current + self.additional_payment
         return self.total_monthly_payment
 
-    @staticmethod
-    def isPaidOff(outstanding):
-        return outstanding <= 0.0
+    def isPaidOff(self):
+        self.status = self.outstanding <= 0.0
+        return self.status
 
-    def leftToPay(self):
-        self.amount_left_to_pay = self.outstanding - self.getMonthlyDebtPayment()
-        return self.amount_left_to_pay
+    def makeMonthlyPaymentToStayCurrent(self):
+        self.outstanding -= self.current
+
+    def makeAdditionalMonthlyPayment(self, additional_amount):
+        self.outstanding -= additional_amount
+
+    def amountLeftToPay(self):
+        return self.outstanding
