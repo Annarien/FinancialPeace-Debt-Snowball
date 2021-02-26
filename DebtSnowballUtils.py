@@ -82,7 +82,10 @@ class DebtSnowballUtils:
             # Keeping current on all debts
             for account in debts.accounts:
                 if not account.isPaidOff():
-                    account.makeMonthlyPaymentToStayCurrent()
+                    if account.current >= account.amountLeftToPay():
+                        account.makeAdditionalMonthlyPayment(account.amountLeftToPay())
+                    else:
+                        account.makeMonthlyPaymentToStayCurrent()
 
             # Pay extra
             money_left_for_the_month = monthly_available_extra
@@ -116,5 +119,5 @@ class DebtSnowballUtils:
 
         print("DONE!")
         new_total_amount_outstanding = debts.getTotalAmountOutstanding()
-        print(f"The new total amount of debt still to be paid off is: {new_total_amount_outstanding}")
-        print(f"The total of debt paid of is: {abs(new_total_amount_outstanding - old_total_amount_outstanding)}")
+        print(f"The new total amount of debt still to be paid off is: R{new_total_amount_outstanding}")
+        print(f"The total of debt paid of is: R{abs(new_total_amount_outstanding - old_total_amount_outstanding)}")
